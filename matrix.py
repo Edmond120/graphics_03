@@ -12,10 +12,18 @@ def print_matrix( matrix ):
 		print ']'
 
 def ident( matrix ):
-	l = len(matrix[0])
+	l = len(matrix)
 	m = new_matrix(rows=l,cols=l)
 	for i in xrange( l ):
 		m[i][i] = 1
+	return m
+
+def translate( matrix , x, y ,z=0 ):
+	m = ident( matrix )
+	c = len(m[0]) - 1
+	m[0][c] = x
+	m[1][c] = y
+	m[2][c] = z
 	return m
 
 #m1 * m2 -> m2
